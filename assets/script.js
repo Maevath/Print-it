@@ -22,11 +22,23 @@ const slides= [
 ];
 let numero = 0;
 
+
+const bulletsContainer=document.querySelector(".dots");
+slides.forEach(function(slide,index){
+	const dot = document.createElement("div")
+	dot.classList.add("dot")
+	if (index === 0){
+		dot.classList.add("dot_selected")
+	}  
+	bulletsContainer.appendChild(dot)
+})
+
 // Bullet slider
 const bullets = document.querySelectorAll(".dot");
 
 // Change slide & bullet
 function ChangeSlide(sens) {
+	
 	numero = numero + sens;
 	if (numero > slides.length -1)
 		numero = 0;
